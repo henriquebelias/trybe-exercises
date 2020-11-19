@@ -1,0 +1,30 @@
+h1 {
+    font-size: 65px;
+    color: orange;
+    font-family: sans-serif;
+    text-align: center;
+    text-decoration: underline;
+}
+
+ul {
+    background-color: aqua;
+    font-style: italic;
+    line-height: 40px;
+}
+
+.bg-color{
+    background-color: yellow;
+}
+
+p {
+    font-weight: 600;
+    font-size: 3em;
+}
+
+body {
+    font-size: 16px;
+}
+
+li {
+    background-color: black;
+}
