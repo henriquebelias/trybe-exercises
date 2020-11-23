@@ -1,0 +1,30 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  text-align: center;
+}
+
+.nav-menu {
+  text-align: center;
+  background-color: aqua;
+  padding: 20px;
+}
+
+.nav-menu li{
+  display: inline;
+  margin: 50px;
+}
+
+img {
+  width: 60%;
+}
+
+footer {
+  background-color: gray;
+  padding: 20px;
+  text-align: center;
+}
+
