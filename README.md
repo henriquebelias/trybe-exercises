@@ -14,7 +14,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 1-4: _Unix & Bash - Part 2_
 - [x] 1-5: _Shell Script_
 
-##### Bloco 2: Git & GitHub
+##### Bloco 2: Git & GitHub :white_check_mark:
 
 - [X] 2-1: _O que é e para que serve?_
 - [X] 2-2: _Entendendo os comandos_
@@ -25,7 +25,7 @@ O programa conta com mais de 1.500 horas de aulas presenciais e online, aborda i
 - [x] 3-1: _HTML & CSS - Estruturas de página_
 - [x] 3-2: _HTML & CSS - Primeiros passos em CSS_
 - [X] 3-3: _HTML & CSS - Seletores e posicionamento_
-- [ ] 3-4: _HTML Semântico_
+- [x] 3-4: _HTML Semântico_
 - [ ] 3-5: _[Projeto - HTML & CSS]()_
 
 ##### Bloco 4: Introdução - JavaScript
