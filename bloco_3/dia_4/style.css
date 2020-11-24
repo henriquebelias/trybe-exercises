@@ -9,13 +9,18 @@ header {
 
 .nav-menu {
   text-align: center;
-  background-color: aqua;
+  background-color: gray;
   padding: 20px;
 }
 
 .nav-menu li{
   display: inline;
   margin: 50px;
+}
+
+.nav-menu li a {
+  color:white;
+  text-decoration: none;
 }
 
 img {
@@ -26,5 +31,11 @@ footer {
   background-color: gray;
   padding: 20px;
   text-align: center;
+}
+
+table, th, td{
+  border: 2px solid black;
+  border-collapse: collapse;
+  padding: 10px;
 }
 
