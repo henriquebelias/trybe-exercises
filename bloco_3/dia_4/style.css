@@ -39,3 +39,12 @@ table, th, td{
   padding: 10px;
 }
 
+.center {
+  width: 80%;
+  margin: 10px auto;
+}
+
+.img-center {
+  display: block;
+  margin: 0 auto;
+}
