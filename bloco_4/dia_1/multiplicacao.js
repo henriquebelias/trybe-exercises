@@ -1,4 +1,5 @@
-let a = 1;
-let b = 1;
+function multiplication(a, b) {
+  return a * b;
+}
 
-console.log(a * b);
+console.log(multiplication(2 ,2));
