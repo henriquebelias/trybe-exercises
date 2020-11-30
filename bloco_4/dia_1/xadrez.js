@@ -1,26 +1,32 @@
-let piece = 'Bishop';
-let namePiece = piece.toLowerCase();
-
-
-switch (namePiece) {
-  case 'king':
-    console.log('vertical, horizontal, diagonal');
-    break;
-  case 'queen':
-    console.log('vertical, horizontal, diagonal');
-    break;
-  case 'rook':
-    console.log('vertical, horizontal');
-    break;
-  case 'bishop':
-    console.log('diagonal');
-    break;
-  case 'knights':
-    console.log('l shape');
-    break;
-  case 'pawn':
-    console.log('verlical');
-    break;
-  default:
-    console.log('invalid piece');
+function chess(piece) {
+  let namePiece = piece.toLowerCase();
+  switch (namePiece) {
+    case 'king':
+      return('vertical, horizontal, diagonal');
+      break;
+    case 'queen':
+      return('vertical, horizontal, diagonal');
+      break;
+    case 'rook':
+      return('vertical, horizontal');
+      break;
+    case 'bishop':
+      return('diagonal');
+      break;
+    case 'knight':
+      return('l shape');
+      break;
+    case 'pawn':
+      return('verlical');
+      break;
+    default:
+      return('invalid piece');
+  }
 }
+
+console.log(chess('king'));
+console.log(chess('queen'));
+console.log(chess('rook'));
+console.log(chess('bishop'));
+console.log(chess('knight'));
+console.log(chess('pawn'));
