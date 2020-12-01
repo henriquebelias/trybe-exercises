@@ -5,3 +5,19 @@
 // Retorno esperado: true
 // verificaFimPalavra("joaofernando", "fernan") ;
 // Retorno esperado: false
+function sameEnding (word, ending) {
+  let reverseWord = word.split('').reverse().join('');
+  let reverseEnding = ending.split('').reverse().join('');
+
+  for (let index in ending) {
+    if (reverseWord[index] != reverseEnding[index]) {
+      return false;
+    } else {
+      return true;
+    }
+  }
+}
+
+console.log(sameEnding('trybe', 'be'));
+console.log(sameEnding('fernando', 'fernan'));
+console.log(sameEnding('ipsum', 'um'));
