@@ -1,9 +1,13 @@
-let a = 1;
-
-if (a > 0) {
-  console.log('positive');
-} else if (a < 0) {
-  console.log('negative');
-} else {
-  console.log('zero');
+function positive (a) {
+  if (a > 0) {
+    return('positive');
+  } else if (a < 0) {
+    return('negative');
+  } else {
+    return('zero');
+  }
 }
+
+console.log(positive(-1));
+console.log(positive(0));
+console.log(positive(1));

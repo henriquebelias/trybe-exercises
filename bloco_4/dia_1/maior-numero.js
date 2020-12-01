@@ -1,10 +1,11 @@
-let a = 1;
-let b = 2;
-
-if (a > b) {
-  console.log(a + ' é maior.')
+function bigger(a, b) {
+  if (a > b) {
+  return(a + ' é maior.')
 }else if (a < b) {
-  console.log(b + ' é maior.')
+  return(b + ' é maior.')
 }else {
-  console.log('São iguais.')
+  return('São iguais.')
 }
+}
+
+console.log(bigger(5, 2));

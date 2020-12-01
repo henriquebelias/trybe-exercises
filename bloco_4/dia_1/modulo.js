@@ -1,4 +1,5 @@
-let a = 1;
-let b = 1;
+function module(a, b) {
+  return a % b;
+}
 
-console.log(a % b);
+console.log(module(8 ,2));
