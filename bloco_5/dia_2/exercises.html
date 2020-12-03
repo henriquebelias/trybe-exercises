@@ -73,6 +73,10 @@
       let parag = document.createElement('p');
       parag.innerHTML = 'Algum texto';
       document.querySelector('.center-content').appendChild(parag);
+      //5. Adicione a tag div com a classe left-content como filho da tag div criada no passo 2;
+      let leftContent = document.createElement('div');
+      leftContent.className = 'left-content';
+      document.querySelector('.main-content').appendChild(leftContent);
     </script>
   </body>
 </html>
