@@ -105,9 +105,10 @@
       //Parte 2
       //1. Adicione a classe title na tag h1 criada;
       header1.className = 'title';
-      //3. Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild() ;
+      //3. Remova o div criado no passo 5 (aquele que possui a classe left-content ). Utilize a função .removeChild();
       document.querySelector('.main-content').removeChild(leftContent);
-      
+      //4. Centralize o div criado no passo 6 (aquele que possui a classe right-content ). Dica: para centralizar, basta configurar o margin-right: auto do div;
+      rightContent.style.marginRight = 'auto';
     </script>
   </body>
 </html>
