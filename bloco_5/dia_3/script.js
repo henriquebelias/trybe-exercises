@@ -33,3 +33,12 @@ function createDays() {
 
 }
 createDays();
+
+//Exercicio 2
+function btFeriados(name){
+  const bt = document.createElement('button');
+  bt.innerText = name;
+  bt.id = 'btn-holilday';
+  document.querySelector('.buttons-container').appendChild(bt);
+}
+btFeriados('Feriados');
