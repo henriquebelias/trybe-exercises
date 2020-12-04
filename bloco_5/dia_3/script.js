@@ -38,7 +38,21 @@ createDays();
 function btFeriados(name){
   const bt = document.createElement('button');
   bt.innerText = name;
-  bt.id = 'btn-holilday';
+  bt.id = 'btn-holiday';
   document.querySelector('.buttons-container').appendChild(bt);
 }
 btFeriados('Feriados');
+
+//Exercicio 3
+const button = document.querySelector('#btn-holiday');
+const holiday = document.getElementsByClassName('holiday');
+function btFeriadosClick() {
+  for (let index = 0; index < holiday.length; index += 1) {
+    if (holiday[index].style.backgroundColor != 'white') {
+      holiday[index].style.backgroundColor = 'white';
+    }else {
+      holiday[index].style.backgroundColor = 'rgb(238,238,238)';
+    }
+  } 
+}
+button.addEventListener('click', btFeriadosClick);
