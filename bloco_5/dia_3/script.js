@@ -65,3 +65,20 @@ function btFriday(name) {
   document.querySelector('.buttons-container').appendChild(bt);
 }
 btFriday('Sexta-feira');
+
+//Exercício 5
+const buttonFriday = document.querySelector('#btn-friday');
+const friDay = document.getElementsByClassName('friday');
+const days = [4, 11, 18, 25];
+function changeFriday () {
+  for (let index = 0; index < friDay.length; index += 1) {
+    if (friDay[index].innerHTML !== 'SEXTOU!') {
+      friDay[index].innerHTML = 'SEXTOU!'
+    } else {
+      for (let index = 0; index < friDay.length; index += 1) {
+        friDay[index].innerText = days[index];
+      }
+    }
+  }
+}
+buttonFriday.addEventListener('click', changeFriday);
