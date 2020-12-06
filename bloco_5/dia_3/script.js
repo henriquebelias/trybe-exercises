@@ -85,13 +85,13 @@ buttonFriday.addEventListener('click', changeFriday);
 const daysZoom = document.getElementById('days');
 function zoomIn() {
   daysZoom.addEventListener('mouseover', function(event) {
-    event.target.style.fontSize = '60px';
+    event.target.style.fontWeight = 'bolder';
   });
 }
 
 function zoomOut(event) {
   daysZoom.addEventListener('mouseout', function(event) {
-    event.target.style.fontSize = '20px';
+    event.target.style.fontWeight = 'normal';
   });
 }
 zoomIn();
