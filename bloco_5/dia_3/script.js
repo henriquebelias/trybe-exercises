@@ -96,3 +96,12 @@ function zoomOut(event) {
 }
 zoomIn();
 zoomOut();
+
+//Exercicio 7
+const myTasks = document.querySelector('.my-tasks');
+function createTask(taskName) {
+  let taskPlace = document.createElement('span');
+  taskPlace.innerText = taskName;
+  myTasks.appendChild(taskPlace);
+}
+createTask('Terminar os exercícios');
