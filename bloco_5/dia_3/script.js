@@ -152,8 +152,6 @@ function addAppointment () {
   taskInput.addEventListener('keyup', function(event) {
     if (event.keyCode === 13 && taskInput.value.length > 0) {
       taskList.innerText = taskInput.value;
-    } else {
-      alert('Digite algum compromisso');
     }
   });
 }
