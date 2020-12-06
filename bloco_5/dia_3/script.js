@@ -81,7 +81,7 @@ function changeFriday () {
 }
 buttonFriday.addEventListener('click', changeFriday);
 
-//Exercicio 6
+//Exercício 6
 const daysZoom = document.getElementById('days');
 function zoomIn() {
   daysZoom.addEventListener('mouseover', function(event) {
@@ -97,7 +97,7 @@ function zoomOut(event) {
 zoomIn();
 zoomOut();
 
-//Exercicio 7
+//Exercício 7
 const myTasks = document.querySelector('.my-tasks');
 function createTask(taskName) {
   let taskPlace = document.createElement('span');
@@ -106,6 +106,7 @@ function createTask(taskName) {
 }
 createTask('Terminar os exercícios');
 
+//Exercício 8
 function taskColor(color) {
   let colorDiv = document.createElement('div');
   colorDiv.style.backgroundColor = color;
