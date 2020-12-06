@@ -119,7 +119,18 @@ taskColor('green');
 function select() {
   colorDiv.addEventListener('click', function(event) {
     event.target.classList.toggle('selected');
-    console.log(event.target);
   });
 }
 select();
+
+//Exercício 10
+function changeDayColor() {
+  daysZoom.addEventListener('click', function(event) {
+    if (event.target.style.color !== 'green' ) {
+      event.target.style.color = 'green';
+    } else {
+      event.target.style.color = 'rgb(119,119,119)';
+    }
+  });
+}
+changeDayColor();
