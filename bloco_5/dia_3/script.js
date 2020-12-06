@@ -89,7 +89,7 @@ function zoomIn() {
   });
 }
 
-function zoomOut(event) {
+function zoomOut() {
   daysZoom.addEventListener('mouseout', function(event) {
     event.target.style.fontWeight = 'normal';
   });
@@ -107,10 +107,19 @@ function createTask(taskName) {
 createTask('Terminar os exercícios');
 
 //Exercício 8
+let colorDiv = document.createElement('div');
 function taskColor(color) {
-  let colorDiv = document.createElement('div');
   colorDiv.style.backgroundColor = color;
-  colorDiv.className = 'task';
+  colorDiv.classList.add('task');
   myTasks.appendChild(colorDiv);
 }
 taskColor('green');
+
+//Exercício 9
+function select() {
+  colorDiv.addEventListener('click', function(event) {
+    event.target.classList.toggle('selected');
+    console.log(event.target);
+  });
+}
+select();
