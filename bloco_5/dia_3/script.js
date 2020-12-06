@@ -126,11 +126,35 @@ select();
 //Exercício 10
 function changeDayColor() {
   daysZoom.addEventListener('click', function(event) {
-    if (event.target.style.color !== 'green' ) {
-      event.target.style.color = 'green';
+    if (event.target.style.color !== colorDiv.style.backgroundColor ) {
+      event.target.style.color = colorDiv.style.backgroundColor;
     } else {
       event.target.style.color = 'rgb(119,119,119)';
     }
   });
 }
 changeDayColor();
+
+//Bônus
+let taskInput = document.querySelector('#task-input');
+let btnAdd = document.querySelector('#btn-add');
+let taskList = document.querySelector('.task-list')
+function addAppointment () {
+  let appointList = document.createElement('li');
+  taskList.appendChild(appointList);
+  btnAdd.addEventListener('click', function () {
+      if (taskInput.value == '') {
+        alert('Digite algum compromisso');
+      } else {
+        taskList.innerText = taskInput.value;
+      }
+  });  
+  taskInput.addEventListener('keyup', function(event) {
+    if (event.keyCode === 13 && taskInput.value.length > 0) {
+      taskList.innerText = taskInput.value;
+    } else {
+      alert('Digite algum compromisso');
+    }
+  });
+}
+addAppointment();
