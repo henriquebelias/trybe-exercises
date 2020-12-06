@@ -105,3 +105,11 @@ function createTask(taskName) {
   myTasks.appendChild(taskPlace);
 }
 createTask('Terminar os exercícios');
+
+function taskColor(color) {
+  let colorDiv = document.createElement('div');
+  colorDiv.style.backgroundColor = color;
+  colorDiv.className = 'task';
+  myTasks.appendChild(colorDiv);
+}
+taskColor('green');
