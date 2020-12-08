@@ -14,7 +14,7 @@ window.onload = function () {
   document.body.style.color = localStorage.getItem('txcolor');
   document.body.style.fontSize = localStorage.getItem('fontsize');
   document.body.style.lineHeight = localStorage.getItem('lineheight');
-  localStorage.ftfamily = localStorage.getItem('ftfamily');
+  document.body.style.fontFamily = localStorage.getItem('ftfamily');
 }
 
 function changeBgColor () {
