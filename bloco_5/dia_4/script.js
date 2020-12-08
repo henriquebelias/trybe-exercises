@@ -61,7 +61,7 @@ onePointFive.addEventListener('click', lineHeightOnePointFive);
 
 function lineHeightDouble () {
   document.body.style.lineHeight = '2';
-  localStorage.lineHeight = '2'
+  localStorage.lineheight = '2'
 }
 double.addEventListener('click', lineHeightDouble);
 
