@@ -7,7 +7,71 @@
   <title>Bloco 6 - Dia 1 - Forms</title>
 </head>
 <body>
-  
+  <header class="container">
+    <h1>Currículo</h1>
+    <h3><em>Cadastre seu currículo abaixo</em></h3>
+  </header>
+  <form action="#" class="container" novalidate>
+    <fieldset class="form-fieldset">
+      <legend>Dados Pessoais</legend>
+      <div class="form-row">
+        <label for="input-name">Nome</label>
+        <input type="text" name="full-name" id="input-name" maxlength="40" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="input-email">Email</label>
+        <input type="text" name="email" id="input-email" maxlength="50" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="input-cpf">CPF</label>
+        <input type="text" name="cpf" id="input-cpf" minlength="11" maxlength="11" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="input-address">Endereço</label>
+        <input type="text" name="address" id="input-adress" maxlength="200" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="input-city">Cidade</label>
+        <input type="text" name="city" id="input-city" maxlength="28" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="select-state">Estado</label>
+        <select name="state" id="select-state" required>
+          <option value="" selected disabled>Escolha seu estado</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <p>Moradia</p>
+        <input type="radio" name="residence" id="house" value="house" required>
+        <label for="house">Casa</label>
+        <input type="radio" name="residence" id="apartment" value="apartment" required>
+        <label for="apartment">Apartamento</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Último Emprego</legend>
+      <div class="form-row">
+        <label for="input-abstract">Resumo do currículo</label>
+        <textarea name="abstract" id="input-abstract" cols="30" rows="10" maxlength="1000" required></textarea>
+      </div>
+      <div class="form-row">
+        <label for="input-position">Cargo</label>
+        <input type="text" name="position" id="input-position" maxlength="40" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="input-job-description">Descrição do Cargo</label>
+        <input type="text" name="job-description" id="input-job-description" maxlength="500" autocomplete="off" required>
+      </div>
+      <div class="form-row">
+        <label for="input-date">Data de início</label>
+        <input type="text" name="date" id="input-date" required minlength="10" maxlength="10" autocomplete="off">
+      </div>
+    </fieldset>
+    <div class="form-row">
+      <button type="submit" id="bt-submit" class="bt bt-submit">Enviar</button>
+      <button type="reset" id="bt-reset" class="bt bt-reset">Apagar</button>
+    </div>
+  </form>
   <script src="script.js"></script>
 </body>
 </html>
