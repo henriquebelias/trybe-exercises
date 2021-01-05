@@ -57,25 +57,22 @@ function checkErrors() {
       for (let index = 0; index < inputsText.length; index += 1) {
         inputsText[index].classList.remove('error');
       }
-  }
-  generateCurriculum();
+      generateCurriculum();
+    }
   });
 }
 checkErrors();
 
 function generateCurriculum() {
-  btSubmit.addEventListener('click', function (event) {
-    event.preventDefault();
-    const inputs = document.querySelectorAll('input');
-    const div = document.createElement('div');
-    for (let index = 0; index < inputs.length; index += 1) {
-      let userInput = inputs[index].value;
-      let formName = inputs[index].name;
-      div.innerHTML += `<p>${formName}: ${userInput}</p>`;
-      div.classList.add('curriculo');
-      document.body.appendChild(div);
-    }
-  });
+  const inputs = document.querySelectorAll('input, select, textarea');
+  const div = document.createElement('div');
+  for (let index = 0; index < inputs.length; index += 1) {
+    let userInput = inputs[index].value;
+    let formName = inputs[index].name;
+    div.innerHTML += `<p>${formName}: ${userInput}</p>`;
+    div.classList.add('curriculo');
+    document.body.appendChild(div);
+  }
 }
 
 function deleteCurriculum() {
