@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Bloco 6 - Dia 1 - Forms</title>
+</head>
+<body>
+  <header class="text-center">
+    <h1>Currículo</h1>
+    <h3><em>Cadastre seu currículo abaixo</em></h3>
+  </header>
+  <form action="#" class="js-form">
+    <h5 class="text-center">Dados Pessoais</h5>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" data-validate-field="name" type="text" name="full-name" id="input-name" autocomplete="off" placeholder="nome">
+      <label class="form-label" for="input-name">Nome</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" data-validate-field="email" type="text" name="email" id="input-email" autocomplete="off" placeholder="email">
+      <label class="form-label" for="input-email">Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" data-validate-field="cpf" type="text" name="cpf" id="input-cpf" autocomplete="off" placeholder="cpf" maxlength="11">
+      <label class="form-label" for="input-cpf">CPF</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" data-validate-field="address" type="text" name="address" id="input-adress" autocomplete="off" placeholder="endereco">
+      <label class="form-label" for="input-address">Endereço</label>
+    </div>
+
+    <div class="row g-2">
+      <div class="form-floating mb-3 col-sm-7">
+        <input class="form-control" data-validate-field="city" type="text" name="city" id="input-city" autocomplete="off" placeholder="cidade">
+        <label class="form-label" for="input-city">Cidade</label>
+      </div>
+
+      <div class="form-floating mb-3 col-sm">
+        <select class="form-select" data-validate-field="state" name="state" id="select-state">
+          <option value="" selected disabled>Escolha seu estado</option>
+        </select>
+        <label class="form-label" for="select-state">Estado</label>
+      </div>
+
+    </div>
+
+    <div class="mb-3">
+      <p>Moradia</p>
+      <div class="form-check">
+        <input class="form-check-input" data-validate-field="radio" type="radio" name="residence" id="house" value="house">
+        <label class="form-check-label" for="house">Casa</label></div>
+      <div class="form-check">
+        <input class="form-check-input" data-validate-field="radio" type="radio" type="radio" name="residence" id="apartment" value="apartment">
+        <label class="form-check-label" for="apartment">Apartamento</label></div>
+    </div>
+
+    <h5 class="text-center">Último Emprego</h5>
+
+    <div class="form-floating mb-3">
+      <textarea class="form-control" data-validate-field="textarea" name="abstract" id="input-abstract" placeholder="abstract" style="height: 200px"></textarea>
+      <label class="form-label" for="input-abstract">Resumo do currículo</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" data-validate-field="position" type="text" name="position" id="input-position" autocomplete="off" placeholder="position">
+      <label class="form-label" for="input-position">Cargo</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input class="form-control" data-validate-field="description" type="text" name="job-description" id="input-job-description" autocomplete="off" placeholder="job-description">
+      <label class="form-label" for="input-job-description">Descrição do Cargo</label>
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label"  for="input-date">Data de início</label>
+      <input class="form-control" data-validate-field="date" type="date" name="date" id="input-date">
+    </div>
+
+    <div class="mb-3">
+      <button class="btn btn-success" type="submit" id="bt-submit">Enviar</button>
+      <button class="btn btn-primary" type="button" id="bt-generate">Gere o Currículo</button>
+      <button class="btn btn-danger" type="reset" id="bt-reset" >Apagar</button>
+    </div>
+
+  </form>
+  <script src="js/just-validate.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
