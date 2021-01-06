@@ -67,6 +67,9 @@ function generateCurriculum() {
   const inputs = document.querySelectorAll('input, select, textarea');
   const div = document.createElement('div');
   for (let index = 0; index < inputs.length; index += 1) {
+    if (inputs[index].type === 'radio' && !inputs[index].checked) {
+      continue;
+    }
     let userInput = inputs[index].value;
     let formName = inputs[index].name;
     div.innerHTML += `<p>${formName}: ${userInput}</p>`;
