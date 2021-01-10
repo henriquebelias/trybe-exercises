@@ -1,10 +1,13 @@
 body {
-
+  font-size: 1.5rem;
+  margin: 20px;
 }
 h1 {
+  font-size: 2.5rem;
 
 }
 h2 {
+  font-size: 2.5rem;
 
 }
 
@@ -13,5 +16,44 @@ img {
 }
 
 figure {
-    margin: 0;
+    margin: 20px 0;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    background-color: aliceblue;
+    font-size: 2rem;
+    margin: 0 30px;
+  }
+  h1 {
+    text-align: center;
+    font-size: 3.5rem;
+  }
+  h2 {
+    text-align: center;
+    font-size: 3rem; 
+  }
+  .img-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  img {
+    width: 100%;
+  }
+  figure {
+    width: 40%;
+    margin: 20px 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  body {
+    background-color: antiquewhite;
+    font-size: 1.3rem;
+    margin: 0 auto;
+    max-width: 80%;
+  }
+  .img-container {
+    justify-content: center;
+  }
 }
