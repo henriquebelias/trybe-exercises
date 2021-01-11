@@ -1,0 +1,68 @@
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-size: 1.2rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+header p {
+  font-style: italic;
+  font-size: 2rem;
+  margin: 20px;
+}
+
+header nav ul {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  padding-left: 0;
+  margin: 20px;
+}
+
+header nav ul li {
+  padding-right: 40px;
+}
+
+header nav ul li:last-child {
+  padding-right: 0;
+}
+
+aside h2 {
+  margin: 20px;
+}
+
+article h1 {
+  font-size: 1.5rem;
+}
+
+article p {
+  font-size: 1.3rem;
+  margin-bottom: 20px;
+}
+
+footer p {
+  margin-bottom: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    margin: 20px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    width: 80%;
+    margin: 0 auto;
+  }
+}
