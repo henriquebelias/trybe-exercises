@@ -11,4 +11,28 @@ const fatorial = number => {
   }
   return result;
 }
-console.log(fatorial(5));
+console.log(fatorial(4));
+
+// Crie uma função que receba uma frase e retorne qual a maior palavra.
+// Exemplo:
+// longestWord("Antônio foi no banheiro e não sabemos o que aconteceu") // retorna 'aconteceu'
+
+const longestWord = (phrase) => {
+  const words = phrase.split(' ');
+  let word1 = '';
+  let word2 = '';
+  let longest = '';
+  for (let index = 1; index < words.length; index += 1) {
+    word1 = words[index];
+    word2 = words[index - 1];
+    if (longest.length > word1.length && longest.length > word2.length) {
+      longest = longest;
+    } else if (word1.length > word2.length) {
+      longest = word1;
+    } else {
+      longest = word2;
+    }
+  }
+  return longest;
+}
+console.log(longestWord('Antônio foi no banheiro e não sabemos o que aconteceu'));
