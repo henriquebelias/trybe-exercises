@@ -36,20 +36,20 @@ const order = {
 
 const customerInfo = (order) => {
   // Adicione abaixo as informações necessárias.
-  console.log( `Olá ${Object.values(order.order.delivery.deliveryPerson).join('')}, entrega para: ${Object.values(order.name).join('')}, Telefone: ${Object.values(order.phoneNumber).join('')}, R. ${Object.values(order.address.street).join('')}, Nº: ${Object.values(order.address.number).join('')}, AP: ${Object.values(order.address.apartment).join('')}`);
+  console.log( `Olá ${order.order.delivery.deliveryPerson}, entrega para: ${order.name}, Telefone: ${order.phoneNumber}, R. ${order.address.street}, Nº: ${order.address.number}, AP: ${order.address.apartment}`);
 
 }
 
-// customerInfo(order);
+customerInfo(order);
 
 const orderModifier = (order) => {
   // Adicione abaixo as informações necessárias.
   order.name = 'Luiz Silva';
   order.payment.total = 50;
-  console.log(`Olá ${Object.values(order.name).join('')}, o total do seu pedido de ${Object.keys(order.order.pizza).join(', ')} e ${Object.values(order.order.drinks.coke.type).join('')} é R$ ${Object.values(order.payment).join('')},00`);
+  console.log(`Olá ${order.name}, o total do seu pedido de ${Object.keys(order.order.pizza).join(', ')} e ${order.order.drinks.coke.type} é R$ ${order.payment.total},00`);
 }
 
-// orderModifier(order);
+orderModifier(order);
 
 
 // Complete a função customerInfo() para que seu retorno seja similar a "Olá Ana Silveira, entrega para: Rafael Andrade, Telefone: 11-98763-1416, R. Rua das Flores, Nº: 389, AP: 701".
