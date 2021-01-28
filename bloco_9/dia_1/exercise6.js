@@ -16,11 +16,12 @@ const sendMarsTemperature = (successCallback, errorCallback) => {
   const success = Math.random() <= 0.6;
   const temperature = getMarsTemperature();
   setTimeout(() => {
-    if (success) {
-      successCallback(temperature);
-    } else {
-      errorCallback('Robot is busy');
-    }
+    (success) ? successCallback(temperature) : errorCallback('Robot is busy');
+    // if (success) {
+    //   successCallback(temperature);
+    // } else {
+    //   errorCallback('Robot is busy');
+    // }
   }, messageDelay());
 };
 
