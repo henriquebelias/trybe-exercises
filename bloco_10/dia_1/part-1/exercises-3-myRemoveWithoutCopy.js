@@ -12,6 +12,8 @@ function myRemoveWithoutCopy(arr, item) {
   return arr;
 }
 
+module.exports = myRemoveWithoutCopy;
+
 // implemente seus testes aqui
 // console.log(myRemoveWithoutCopy([1, 2, 3, 4], 3)); ==> [ 1, 2, 4 ]
 // A função myRemoveWithoutCopy(arr, item) recebe um array arr e retorna o próprio array sem o elemento item caso ele exista no array
