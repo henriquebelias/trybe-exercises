@@ -15,6 +15,8 @@ const obj3 = {
   description: 'My Description',
 };
 
+module.exports = { obj1, obj2, obj3 }
+
 // implemente seus testes aqui
 // Compare dois objetos (JSON) para verificar se são idênticos ou não
 
