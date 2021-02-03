@@ -10,6 +10,8 @@ function myRemove(arr, item) {
   return newArr;
 }
 
+module.exports = myRemove;
+
 // implemente seus testes aqui
 
 // Verifique se a chamada myRemove([1, 2, 3, 4], 3) retorna o array esperado
