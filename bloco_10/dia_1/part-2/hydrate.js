@@ -1,16 +1,8 @@
 function hydrate(order) {
-  let numbers = order.match(/\d+/g).map(Number);
-  let waterCups = 0;
-  let result;
-
-  for (let index in numbers) {
-    waterCups += numbers[index]
-  }
-
-  if (waterCups === 1) {
-    result = `${waterCups} copo de água`;
-  } else {
-    result = `${waterCups} copos de água`;
-  }
-  return result;
+  let numbers = order.match(/\d+/g)
+  .map(Number).reduce((acc, curr) => acc + curr, 0);
+  return (numbers === 1)
+    ? `${numbers} copo de água` : `${numbers} copos de água`;
 }
+
+module.exports = hydrate;
