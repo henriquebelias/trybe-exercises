@@ -17,3 +17,5 @@ function decode(phrase) {
   .replace(/5/g, 'u');
   return decoded;
 }
+
+module.exports = { encode, decode }
