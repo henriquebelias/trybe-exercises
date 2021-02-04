@@ -1,17 +1,7 @@
 function techList(tech, name) {
-  let technology = [];
-  let result;
+  const technology = tech.sort().map(tech => ({tech, name}));
 
-  for (let index in tech.sort()) {
-    technology.push({
-      tech: tech[index],
-      name,
-    });
-  }
-  if (technology.length === 0) {
-    result = 'Vazio!';
-  } else {
-    result = technology;
-  }
-  return result;
+  return (technology.length === 0) ? 'Vazio!' : technology;
 }
+
+module.exports = techList;
