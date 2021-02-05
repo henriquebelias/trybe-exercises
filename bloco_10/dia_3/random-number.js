@@ -6,4 +6,4 @@ const generateRandomNumber = () => {
   return Math.floor(Math.random() * 101);
 }
 
-module.exports = generateRandomNumber;
+module.exports = { generateRandomNumber };
