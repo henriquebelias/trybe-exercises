@@ -10,11 +10,15 @@ fetchDogPictures = jest.fn();
 test('deve interpretar que a requisição se resolveu', async () => {
   fetchDogPictures.mockResolvedValue('request sucess');
 
+  expect.assertions(1);
+
   expect(fetchDogPictures()).resolves.toBe('request sucess');
 });
 
 test('deve interpretar que a requisição falhou', async () => {
   fetchDogPictures.mockRejectedValue('request failed');
+  
+  expect.assertions(1);
 
   expect(fetchDogPictures()).rejects.toBe('request failed');
 });

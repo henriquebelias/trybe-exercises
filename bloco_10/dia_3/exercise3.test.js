@@ -4,6 +4,8 @@ test('Teste a função, modificando a sua implementação uma vez, resetando e m
   const mockRandomNumber = jest.spyOn(randomNumber, 'generateRandomNumber');
 
   mockRandomNumber.mockImplementation((num1, num2, num3) => num1 * num2 * num3);
+
+  expect.assertions(6);
   
   expect(mockRandomNumber(1, 2, 3)).toBe(6);
   expect(mockRandomNumber).toHaveBeenCalledTimes(1);

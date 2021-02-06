@@ -18,5 +18,7 @@ test('teste a chamada feita para um resultado específico', () => {
   }
   fetchJoke.mockResolvedValue(result.joke);
 
+  expect.assertions(1);
+
   expect(fetchJoke()).resolves.toBe('Whiteboards ... are remarkable.');
 });
