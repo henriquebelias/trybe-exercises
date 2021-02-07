@@ -1,8 +1,9 @@
 const fetch = require('node-fetch')
 
-let fetchDogPictures = async () => {
+let fetchDogPictures = () => {
   return fetch('https://dog.ceo/api/breeds/image/random').then(response => response.json())
-    .then(json => response.ok ? Promise.resolve(json) : Promise.reject(json));
+    .then(object => object.message);
+
 }
 
 fetchDogPictures = jest.fn();
@@ -12,7 +13,9 @@ test('deve interpretar que a requisição se resolveu', async () => {
 
   expect.assertions(1);
 
-  expect(fetchDogPictures()).resolves.toBe('request sucess');
+  const data = await fetchDogPictures();
+
+  expect(data).toBe('request sucess');
 });
 
 test('deve interpretar que a requisição falhou', async () => {
@@ -20,5 +23,9 @@ test('deve interpretar que a requisição falhou', async () => {
   
   expect.assertions(1);
 
-  expect(fetchDogPictures()).rejects.toBe('request failed');
+  try {
+    await fetchDogPictures();
+  } catch (error) {
+    expect(error).toBe('request failed');
+  }
 });

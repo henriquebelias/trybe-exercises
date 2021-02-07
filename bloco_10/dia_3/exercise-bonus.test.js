@@ -10,7 +10,7 @@ let fetchJoke = () => {
 
 fetchJoke = jest.fn();
 
-test('teste a chamada feita para um resultado específico', () => {
+test('teste a chamada feita para um resultado específico', async () => {
   const result = {
     'id': '7h3oGtrOfxc',
     'joke': 'Whiteboards ... are remarkable.',
@@ -20,5 +20,7 @@ test('teste a chamada feita para um resultado específico', () => {
 
   expect.assertions(1);
 
-  expect(fetchJoke()).resolves.toBe('Whiteboards ... are remarkable.');
+  const data = await fetchJoke();
+
+  expect(data).toBe('Whiteboards ... are remarkable.');
 });
