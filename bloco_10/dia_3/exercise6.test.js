@@ -13,9 +13,10 @@ test('deve interpretar que a requisição se resolveu', async () => {
 
   expect.assertions(1);
 
-  const data = await fetchDogPictures();
+  // const data = await fetchDogPictures();
+  // expect(data).toBe('request sucess');
 
-  expect(data).toBe('request sucess');
+  await expect(fetchDogPictures()).resolves.toBe('request sucess');
 });
 
 test('deve interpretar que a requisição falhou', async () => {
@@ -23,9 +24,11 @@ test('deve interpretar que a requisição falhou', async () => {
   
   expect.assertions(1);
 
-  try {
-    await fetchDogPictures();
-  } catch (error) {
-    expect(error).toBe('request failed');
-  }
+  // try {
+  //   await fetchDogPictures();
+  // } catch (error) {
+  //   expect(error).toBe('request failded');
+  // }
+
+  await expect(fetchDogPictures()).rejects.toBe('request failed');
 });

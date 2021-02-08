@@ -20,7 +20,8 @@ test('teste a chamada feita para um resultado específico', async () => {
 
   expect.assertions(1);
 
-  const data = await fetchJoke();
+  // const data = await fetchJoke();
+  // expect(data).toBe('Whiteboards ... are remarkable.');
 
-  expect(data).toBe('Whiteboards ... are remarkable.');
+  await expect(fetchJoke()).resolves.toBe('Whiteboards ... are remarkable.');
 });
