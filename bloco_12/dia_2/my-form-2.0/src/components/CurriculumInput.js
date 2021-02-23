@@ -11,7 +11,7 @@ class CurriculumInput extends React.Component {
       <div>
         <label>
           Resumo do Currículo:
-          <textarea name="curriculumInput" onChange={handleChange} value={value} />
+          <textarea name="curriculumInput" onChange={handleChange} value={value}  autoComplete="off" />
         </label>
         <span className="error">{error ? error : ''}</span>
       </div>

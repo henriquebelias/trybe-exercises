@@ -16,6 +16,7 @@ class PositionInput extends React.Component {
             onChange={handleChange}
             onMouseEnter={!mouseEnter ? handleMouseEnter : () => {}}
             value={value}
+            autoComplete="off"
           />
         </label>
         <span className="error">{error ? error : ''}</span>
