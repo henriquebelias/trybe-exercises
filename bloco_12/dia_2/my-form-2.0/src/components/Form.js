@@ -9,6 +9,7 @@ import HousingInput from './HousingInput';
 import CurriculumInput from './CurriculumInput';
 import PositionInput from './PositionInput';
 import states from './statesData';
+import JobDescriptionInput from './JobDescriptionInput';
 import './Form.css';
 
 class Form extends React.Component {
@@ -81,6 +82,7 @@ class Form extends React.Component {
               value={this.state.positionInput}
               mouseEnter={this.state.mouseEnter}
             />
+            <JobDescriptionInput handleChange={this.handleChange} value={this.state.jobDescriptionInput} />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
@@ -92,6 +94,7 @@ class Form extends React.Component {
         <h5>{`Tipo de Moradia: ${this.state.housingInput}`}</h5>
         <h5>{`Resumo do Currículo: ${this.state.curriculumInput}`}</h5>
         <h5>{`Cargo: ${this.state.positionInput}`}</h5>
+        <h5>{`Descrição do Cargo: ${this.state.jobDescriptionInput}`}</h5>
       </div>
     )
   }
