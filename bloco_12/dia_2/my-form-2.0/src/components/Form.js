@@ -5,6 +5,7 @@ import CpfInput from './CpfInput';
 import AdressInput from './AdressInput';
 import CityInput from './CityInput';
 import StateInput from './StateInput';
+import HousingInput from './HousingInput';
 import states from './statesData';
 import './Form.css';
 
@@ -58,6 +59,7 @@ class Form extends React.Component {
             <AdressInput handleChange={this.handleChange} value={this.state.adressInput} />
             <CityInput handleChange={this.handleChange} value={this.state.cityInput} handleBlur={this.handleBlur} />
             <StateInput states={states} handleChange={this.handleChange} value={this.state.stateInput} />
+            <HousingInput handleChange={this.handleChange} value={this.state.housingInput} />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
@@ -66,6 +68,7 @@ class Form extends React.Component {
         <h5>{`Endereço: ${this.state.adressInput}`}</h5>
         <h5>{`Cidade: ${this.state.cityInput}`}</h5>
         <h5>{`Estado: ${this.state.stateInput}`}</h5>
+        <h5>{`Tipo de Moradia: ${this.state.housingInput}`}</h5>
       </div>
     )
   }
