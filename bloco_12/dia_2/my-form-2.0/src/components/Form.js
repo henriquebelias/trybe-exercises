@@ -6,6 +6,7 @@ import AdressInput from './AdressInput';
 import CityInput from './CityInput';
 import StateInput from './StateInput';
 import HousingInput from './HousingInput';
+import CurriculumInput from './CurriculumInput';
 import states from './statesData';
 import './Form.css';
 
@@ -60,6 +61,10 @@ class Form extends React.Component {
             <CityInput handleChange={this.handleChange} value={this.state.cityInput} handleBlur={this.handleBlur} />
             <StateInput states={states} handleChange={this.handleChange} value={this.state.stateInput} />
             <HousingInput handleChange={this.handleChange} value={this.state.housingInput} />
+          </fieldset>
+          <fieldset>
+            <legend>Dados Profissionais</legend>
+            <CurriculumInput handleChange={this.handleChange} value={this.state.curriculumInput} />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
