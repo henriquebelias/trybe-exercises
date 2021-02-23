@@ -10,7 +10,7 @@ class EmailInput extends React.Component {
     return(
       <div>
         <label>
-          Email
+          Email:
           <input type="text" name="emailInput" onChange={handleChange} value={value} />
         </label>
         <span className="error">{error ? error : ''}</span>

@@ -2,6 +2,7 @@ import React from 'react';
 import NameInput from './NameInput';
 import './Form.css';
 import EmailInput from './EmailInput';
+import CpfInput from './CpfInput';
 
 class Form extends React.Component {
   constructor(props) {
@@ -38,10 +39,12 @@ class Form extends React.Component {
             <legend>Dados Pessoais</legend>
             <NameInput handleChange={this.handleChange} value={this.state.nameInput} />
             <EmailInput handleChange={this.handleChange} value={this.state.emailInput} />
+            <CpfInput handleChange={this.handleChange} value={this.state.cpfInput} />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
         <h5>{`Email: ${this.state.emailInput}`}</h5>
+        <h5>{`CPF: ${this.state.cpfInput}`}</h5>
       </div>
     )
   }
