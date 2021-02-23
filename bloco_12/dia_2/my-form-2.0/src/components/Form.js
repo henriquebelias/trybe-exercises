@@ -7,6 +7,7 @@ import CityInput from './CityInput';
 import StateInput from './StateInput';
 import HousingInput from './HousingInput';
 import CurriculumInput from './CurriculumInput';
+import PositionInput from './PositionInput';
 import states from './statesData';
 import './Form.css';
 
@@ -25,10 +26,12 @@ class Form extends React.Component {
       curriculumInput: '',
       positionInput: '',
       jobDescriptionInput: '',
+      mouseEnter: false,
     }
 
     this.handleChange = this.handleChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
+    this.handleMouseEnter = this.handleMouseEnter.bind(this);
   }
 
   handleChange({ target }) {
@@ -48,6 +51,13 @@ class Form extends React.Component {
     }
   }
 
+  handleMouseEnter() {
+    alert('Preencha com cuidado esta informação.');
+    this.setState({
+      mouseEnter: true,
+    })
+  }
+
   render() {
     return (
       <div>
@@ -65,6 +75,12 @@ class Form extends React.Component {
           <fieldset>
             <legend>Dados Profissionais</legend>
             <CurriculumInput handleChange={this.handleChange} value={this.state.curriculumInput} />
+            <PositionInput
+              handleChange={this.handleChange}
+              handleMouseEnter={this.handleMouseEnter}
+              value={this.state.positionInput}
+              mouseEnter={this.state.mouseEnter}
+            />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
@@ -74,6 +90,8 @@ class Form extends React.Component {
         <h5>{`Cidade: ${this.state.cityInput}`}</h5>
         <h5>{`Estado: ${this.state.stateInput}`}</h5>
         <h5>{`Tipo de Moradia: ${this.state.housingInput}`}</h5>
+        <h5>{`Resumo do Currículo: ${this.state.curriculumInput}`}</h5>
+        <h5>{`Cargo: ${this.state.positionInput}`}</h5>
       </div>
     )
   }
