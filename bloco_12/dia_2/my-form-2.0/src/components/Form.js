@@ -1,6 +1,7 @@
 import React from 'react';
 import NameInput from './NameInput';
 import './Form.css';
+import EmailInput from './EmailInput';
 
 class Form extends React.Component {
   constructor(props) {
@@ -36,9 +37,11 @@ class Form extends React.Component {
           <fieldset>
             <legend>Dados Pessoais</legend>
             <NameInput handleChange={this.handleChange} value={this.state.nameInput} />
+            <EmailInput handleChange={this.handleChange} value={this.state.emailInput} />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
+        <h5>{`Email: ${this.state.emailInput}`}</h5>
       </div>
     )
   }

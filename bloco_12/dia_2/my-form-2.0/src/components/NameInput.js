@@ -11,7 +11,7 @@ class NameInput extends React.Component {
       <div>
         <label>
           Nome:
-          <input type="text" name={"nameInput"} onChange={handleChange} value={value} autoComplete="off" />
+          <input type="text" name={"nameInput"} onChange={handleChange} value={value.toUpperCase()} autoComplete="off" />
         </label>
         <span className="error">{error ? error : ''}</span>
       </div>
