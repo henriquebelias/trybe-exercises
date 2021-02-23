@@ -10,7 +10,12 @@ class AdressInput extends React.Component {
       <div>
         <label>
           Endereço:
-          <input type="text" name="adressInput" onChange={handleChange} value={value} autoComplete="off" />
+          <input
+            type="text"
+            name="adressInput"
+            onChange={handleChange}
+            value={value.replace(/[^\w\s]/gi, '')}
+            autoComplete="off" />
         </label>
         <span className="error">{error ? error : ''}</span>
       </div>
