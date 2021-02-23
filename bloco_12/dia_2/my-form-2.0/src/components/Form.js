@@ -1,5 +1,6 @@
 import React from 'react';
 import NameInput from './NameInput';
+import './Form.css';
 
 class Form extends React.Component {
   constructor(props) {
@@ -7,6 +8,15 @@ class Form extends React.Component {
 
     this.state = {
       nameInput: '',
+      emailInput: '',
+      cpfInput: '',
+      adressInput: '',
+      cityInput: '',
+      stateInput: '',
+      housingInput: '',
+      curriculumInput: '',
+      positionInput: '',
+      jobDescriptionInput: '',
     }
 
     this.handleChange = this.handleChange.bind(this);
@@ -22,10 +32,13 @@ class Form extends React.Component {
   render() {
     return (
       <div>
-        <fieldset>
-          <legend>Dados Pessoais</legend>
-          <NameInput handleChange={this.handleChange} value={this.state.nameInput} />
-        </fieldset>
+        <form>
+          <fieldset>
+            <legend>Dados Pessoais</legend>
+            <NameInput handleChange={this.handleChange} value={this.state.nameInput} />
+          </fieldset>
+        </form>
+        <h5>{`Nome: ${this.state.nameInput}`}</h5>
       </div>
     )
   }
