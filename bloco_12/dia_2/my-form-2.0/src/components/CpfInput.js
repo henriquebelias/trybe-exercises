@@ -11,7 +11,7 @@ class CpfInput extends React.Component {
       <div>
         <label>
           CPF:
-          <input type="text" name="cpfInput" onChange={handleChange} value={value} />
+          <input type="text" name="cpfInput" onChange={handleChange} value={value} autoComplete="off" />
         </label>
         <span className="error">{error ? error : ''}</span>
       </div>

@@ -4,6 +4,7 @@ import './Form.css';
 import EmailInput from './EmailInput';
 import CpfInput from './CpfInput';
 import AdressInput from './AdressInput';
+import CityInput from './CityInput';
 
 class Form extends React.Component {
   constructor(props) {
@@ -23,6 +24,7 @@ class Form extends React.Component {
     }
 
     this.handleChange = this.handleChange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleChange({ target }) {
@@ -30,6 +32,16 @@ class Form extends React.Component {
     this.setState({
       [name]: value,
     })
+  }
+
+  handleBlur({ target }) {
+    let { value } = target;
+    const isNumber = parseInt(value[0]);
+    if(!Number.isNaN(isNumber)) {
+      this.setState({
+        cityInput: '',
+      })
+    }
   }
 
   render() {
@@ -42,12 +54,14 @@ class Form extends React.Component {
             <EmailInput handleChange={this.handleChange} value={this.state.emailInput} />
             <CpfInput handleChange={this.handleChange} value={this.state.cpfInput} />
             <AdressInput handleChange={this.handleChange} value={this.state.adressInput} />
+            <CityInput handleChange={this.handleChange} value={this.state.cityInput} handleBlur={this.handleBlur} />
           </fieldset>
         </form>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
         <h5>{`Email: ${this.state.emailInput}`}</h5>
         <h5>{`CPF: ${this.state.cpfInput}`}</h5>
         <h5>{`Endereço: ${this.state.adressInput}`}</h5>
+        <h5>{`Cidade: ${this.state.cityInput}`}</h5>
       </div>
     )
   }

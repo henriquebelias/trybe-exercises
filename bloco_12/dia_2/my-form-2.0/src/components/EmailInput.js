@@ -11,7 +11,7 @@ class EmailInput extends React.Component {
       <div>
         <label>
           Email:
-          <input type="text" name="emailInput" onChange={handleChange} value={value} />
+          <input type="text" name="emailInput" onChange={handleChange} value={value} autoComplete="off" />
         </label>
         <span className="error">{error ? error : ''}</span>
       </div>
