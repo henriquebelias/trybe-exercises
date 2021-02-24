@@ -1,0 +1,12 @@
+.App {
+  margin: 0 auto;
+  width: 50%;
+}
+
+fieldset legend {
+  text-align: center;
+}
+
+.btn {
+  width: 100%;
+}
