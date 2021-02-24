@@ -8,11 +8,9 @@ class CurriculumInput extends React.Component {
     if(value.length > 1000) error = 'O texto não pode ser maior que 1000 caracteres';
 
     return (
-      <div>
-        <label>
-          Resumo do Currículo:
-          <textarea name="curriculumInput" onChange={handleChange} value={value}  autoComplete="off" />
-        </label>
+      <div className="mb-3">
+        <label className="form-label">Resumo do Currículo:</label>
+        <textarea className="form-control" name="curriculumInput" onChange={handleChange} value={value}  autoComplete="off" />
         <span className="error">{error ? error : ''}</span>
       </div>
     )

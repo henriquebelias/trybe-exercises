@@ -7,11 +7,9 @@ class JobDescriptionInput extends React.Component {
     let error = '';
     if(value.length > 500) error = 'O texto não pode ser maior que 500 caracteres';
     return (
-      <div>
-        <label>
-          Descrição do Cargo:
-          <textarea name="jobDescriptionInput" onChange={handleChange} value={value} autoComplete="off" />
-        </label>
+      <div className="mb-3">
+        <label className="form-label">Descrição do Cargo:</label>
+        <textarea className="form-control" name="jobDescriptionInput" onChange={handleChange} value={value} autoComplete="off" />
         <span className="error">{error ? error : ''}</span>
       </div>
     )

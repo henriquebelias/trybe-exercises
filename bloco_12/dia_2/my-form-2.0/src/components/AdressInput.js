@@ -7,16 +7,15 @@ class AdressInput extends React.Component {
     let error = '';
     if(value.length > 200) error = 'O texto não pode ser maior que 200 caracteres';
     return (
-      <div>
-        <label>
-          Endereço:
+      <div className="mb-3">
+        <label className="form-label">Endereço:</label>
           <input
+            className="form-control"
             type="text"
             name="adressInput"
             onChange={handleChange}
             value={value.replace(/[^\w\s]/gi, '')}
             autoComplete="off" />
-        </label>
         <span className="error">{error ? error : ''}</span>
       </div>
     )

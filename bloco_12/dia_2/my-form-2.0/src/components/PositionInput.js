@@ -7,18 +7,17 @@ class PositionInput extends React.Component {
     let error = '';
     if(value.length > 40) error = 'O texto não pode ser maior que 40 caracteres';
     return (
-      <div>
-        <label>
-          Cargo:
-          <input
-            type="text"
-            name="positionInput"
-            onChange={handleChange}
-            onMouseEnter={!mouseEnter ? handleMouseEnter : () => {}}
-            value={value}
-            autoComplete="off"
-          />
-        </label>
+      <div className="mb-3">
+        <label className="form-label">Cargo:</label>
+        <input
+          className="form-control"
+          type="text"
+          name="positionInput"
+          onChange={handleChange}
+          onMouseEnter={!mouseEnter ? handleMouseEnter : () => {}}
+          value={value}
+          autoComplete="off"
+        />
         <span className="error">{error ? error : ''}</span>
       </div>
     )
