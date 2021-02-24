@@ -23,7 +23,7 @@ class Form extends React.Component {
       cpfInput: '',
       adressInput: '',
       cityInput: '',
-      stateInput: '',
+      stateInput: 'Selecione um Estado',
       housingInput: '',
       curriculumInput: '',
       positionInput: '',
