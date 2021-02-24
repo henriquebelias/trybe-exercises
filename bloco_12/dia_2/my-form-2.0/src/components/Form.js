@@ -33,6 +33,7 @@ class Form extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.handleBlur = this.handleBlur.bind(this);
     this.handleMouseEnter = this.handleMouseEnter.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   handleChange({ target }) {
@@ -56,6 +57,21 @@ class Form extends React.Component {
     alert('Preencha com cuidado esta informação.');
     this.setState({
       mouseEnter: true,
+    })
+  }
+
+  clearForm() {
+    this.setState({
+      nameInput: '',
+      emailInput: '',
+      cpfInput: '',
+      adressInput: '',
+      cityInput: '',
+      stateInput: '',
+      housingInput: '',
+      curriculumInput: '',
+      positionInput: '',
+      jobDescriptionInput: '',
     })
   }
 
@@ -85,6 +101,7 @@ class Form extends React.Component {
             <JobDescriptionInput handleChange={this.handleChange} value={this.state.jobDescriptionInput} />
           </fieldset>
         </form>
+        <button onClick={this.clearForm}>Limpar</button>
         <h5>{`Nome: ${this.state.nameInput}`}</h5>
         <h5>{`Email: ${this.state.emailInput}`}</h5>
         <h5>{`CPF: ${this.state.cpfInput}`}</h5>
