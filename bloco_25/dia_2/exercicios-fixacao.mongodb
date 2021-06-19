@@ -1,0 +1,145 @@
+// $lookup
+// Selecione todos os clientes com as suas respectivas transações feitas;
+use('agg_example');
+db.clients.aggregate([
+  {$lookup: {
+      from: 'transactions',
+      localField: 'name',
+      foreignField: 'from',
+      as: 'transactions'
+  }},
+]);
+
+use('agg_example');
+db.clients.aggregate([
+  {
+    $lookup: {
+      from:'transactions',
+      let: {user_name: '$name'},
+      pipeline: [{$match: {$expr: {$eq: ['$from', '$$user_name']}}}],
+      as: 'transactions',
+    }
+  }
+]);
+
+// Selecione os quatro primeiros clientes com as suas respectivas transações recebidas ordenados pelo estado em ordem alfabética;
+use('agg_example');
+db.clients.aggregate([
+  {$lookup: {
+      from: 'transactions',
+      localField: 'name',
+      foreignField: 'to',
+      as: 'transactions'
+  }},
+  {$sort: {State: 1}}
+  {$limit: 4},
+]);
+
+use('agg_example');
+db.clients.aggregate([
+  {
+    $lookup: {
+      from: 'transactions',
+      let: {user_name: '$name'},
+      pipeline: [{$match: {$expr: {$eq: ['$to', '$$user_name']}}}],
+      as: 'transactions',
+    }
+  },
+  {$sort: {State: 1}},
+  {$limit: 4}
+]);
+
+// Selecione todos os cliente do estado da "Florida" e suas respectivas transações recebidas.
+use('agg_example');
+db.clients.aggregate([
+  {$match: {
+    State: 'Florida',
+  }},
+  {$lookup: {
+    from: 'transactions',
+    localField: 'name',
+    foreignField: 'to',
+    as: 'transactions'
+  }}
+]);
+
+use('agg_example');
+db.clients.aggregate([
+  {$match: { State: "Florida" }},
+  {
+    $lookup: {
+      from: "transactions",
+      let: { user_name: "$name"},
+      pipeline: [{$match: {$expr: {$eq: ["$to", "$$user_name"]}}}],
+      as: "transactions"
+    }
+  },
+])
+
+// $add
+// Calcule qual o custo total de cada produto, considerando o preço de compra e os impostos.
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, total: {$add: ['$purchase_price', '$taxes']}}}
+]);
+
+// $subtract
+// Calcule qual o lucro total de cada produto, considerando o preço de compra, os impostos e seu valor de venda.
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, total: {$subtract: ['$sale_price', {$add: ['$purchase_price', '$taxes']}]}}}
+]);
+
+// $ceil, $floor, $round
+// Retorne o menor número inteiro relativo ao preço de venda de cada produto;
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, value: {$floor: '$sale_price'}}}
+]);
+
+// Retorne o maior número inteiro relativo ao lucro total sobre cada produto.
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, value: {$ceil: '$sale_price'}}}
+]);
+
+// $abs
+// Calcule o valor absoluto do lucro total de cada produto.
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, value: {$abs: {$subtract: ['$sale_price', {$add: ['$purchase_price', '$taxes']}]}}}}
+]);
+
+// $multiply
+// Calcule qual o valor total em estoque de cada produto, considerando o preço de venda e a quantidade;
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, total: {$multiply: ['$sale_price', '$quantity']}}}
+]);
+
+// Calcule qual será o lucro total de cada produto caso todo o estoque seja vendido.
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, total: {$multiply: ['$quantity', {$subtract: ['$sale_price', {$add: ['$purchase_price', '$taxes']}]}]}}}
+]);
+
+// $divide
+// Calcule qual será o preço de venda de cada produto caso haja uma promoção de 50% de desconto.
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, discounted_price: {$multiply: ['$sale_price', 0.5]}}}
+]);
+
+use('storage');
+db.products.aggregate([
+  {$project: {_id: 0, name: 1, new_price: {$subtract: ["$sale_price", {$multiply: [{ $divide: [50, 100] }, "$sale_price"]}]}}}
+]);
+
+// $addFields
+// Calcule o valor total do estoque, considerando que cada produto valha o mesmo que seu preço de venda. Lembre-se da quantidade.
+use('storage');
+db.products.aggregate([
+  {$addFields: {
+    stockTotalValue: {$multiply: ['$sale_price', '$quantity']}
+  }}
+]);
