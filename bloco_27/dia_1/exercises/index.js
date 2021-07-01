@@ -1,3 +1,4 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const rescue = require('express-rescue');
@@ -5,7 +6,7 @@ const userModel = require('./models/userModel');
 
 const app = express();
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3000;
 
 app.use(bodyParser.json());
 

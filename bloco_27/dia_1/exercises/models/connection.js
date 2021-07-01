@@ -7,17 +7,19 @@ const OPTIONS = {
     useUnifiedTopology: true,
 }
 
-const MONGO_DB_URL = 'mongodb://127.0.0.1:27017';
-
 let db = null;
 
 const connection = () => {
     return db
     ? Promise.resolve(db)
-    : MongoClient.connect(MONGO_DB_URL, OPTIONS)
+    : MongoClient.connect(process.env.DB_URL, OPTIONS)
       .then((conn) => {
-        db = conn.db('model_exercise');
+        db = conn.db(process.env.DB_NAME);
         return db;
+      })
+      .catch((err) => {
+        console.error(err);
+        process.exit(1);
       })
 };
 

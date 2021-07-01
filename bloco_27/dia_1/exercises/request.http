@@ -1,5 +1,5 @@
 ### adicione um usuário
-POST http://localhost:3001/user
+POST http://localhost:3000/user
 content-type: application/json
 
 {
@@ -10,13 +10,13 @@ content-type: application/json
 }
 
 ### busque usuarios
-GET http://localhost:3001/user
+GET http://localhost:3000/user
 
 ### busque usuário por id
-GET http://localhost:3001/user/60ddf31437c3cb8affdb9cdc
+GET http://localhost:3000/user/60ddf31437c3cb8affdb9cdc
 
 ### edite um usuário
-PUT http://localhost:3001/user/60ddf31437c3cb8affdb9cdc
+PUT http://localhost:3000/user/60ddf31437c3cb8affdb9cdc
 content-type: application/json
 
 {
@@ -27,4 +27,4 @@ content-type: application/json
 }
 
 ### apague um usuário
-DELETE http://localhost:3001/user/60ddf31437c3cb8affdb9cdc
+DELETE http://localhost:3000/user/60ddf31437c3cb8affdb9cdc

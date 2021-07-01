@@ -1,0 +1,2 @@
+### get authors
+GET http://localhost:3000/authors

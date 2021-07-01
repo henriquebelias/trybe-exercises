@@ -3,9 +3,9 @@
 const mysql = require('mysql2/promise');
 
 const connection = mysql.createPool({
-    host: 'localhost',
-    user: 'henriquebelias',
-    password: 'hEn+290193',
-    database: 'model_example'});
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB_DATABASE});
 
 module.exports = connection;
