@@ -1,0 +1,6 @@
+@apiurl = http://localhost:3000
+
+GET {{apiurl}}/5
+
+###
+GET {{apiurl}}/ping

@@ -1,0 +1,30 @@
+### Get all authors
+GET http://localhost:3000/authors
+
+### Get author by id
+GET http://localhost:3000/authors/60db3f4569029ba5192d20fe
+
+### Post new author
+POST http://localhost:3000/authors HTTP/1.1
+content-type: application/json
+
+{
+  "first_name": "Joseph",
+  "middle_name": "Henry",
+  "last_name": "Delaney"
+}
+
+### Get all books
+GET http://localhost:3000/books
+
+### Get books by author id
+GET http://localhost:3000/books/1
+
+### Post new books
+POST http://localhost:3000/books HTTP/1.1
+content-type: application/json
+
+{
+  "title": "The Spook's Apprentice",
+  "authorId": 6
+}
