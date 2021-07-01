@@ -1,0 +1,30 @@
+### adicione um usuário
+POST http://localhost:3001/user
+content-type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@gmail.com",
+  "password": "d496d5ea2441"
+}
+
+### busque usuarios
+GET http://localhost:3001/user
+
+### busque usuário por id
+GET http://localhost:3001/user/60ddf31437c3cb8affdb9cdc
+
+### edite um usuário
+PUT http://localhost:3001/user/60ddf31437c3cb8affdb9cdc
+content-type: application/json
+
+{
+  "firstName": "Calebe",
+  "lastName": "Junior",
+  "email": "calebe.junior@gmail.com",
+  "password": "d496d5ea2442"
+}
+
+### apague um usuário
+DELETE http://localhost:3001/user/60ddf31437c3cb8affdb9cdc
