@@ -1,2 +1,5 @@
 ### get all
+GET http://localhost:3000/cep
+
+### ping
 GET http://localhost:3000/ping

@@ -1,23 +1,39 @@
 const connection = require('./connection');
 
-const CEP_REGEX = /\d{5}-\d{3}/;
+const formatCep = (cep) => cep.replace(/-/ig, '');
 
 const getAll = async () => {
-  const result = await connection.execute('SELECT * FROM ceps');
+  const [result] = await connection.execute('SELECT * FROM ceps');
 
-  return result[0];
+  return result;
+};
+
+const findAddressByCep = async (cep) => {
+  const formattedCep = formatCep(cep);
+
+  const query = 'SELECT * FROM ceps WHERE cep = ?';
+
+  const [result] = await connection.execute(query, [formattedCep]);
+
+  if (!result) return null;
+
+  return result;
 }
 
-const insertCep = async (cep, logradouro, bairro, localidade, uf) => {
+const create = async (cep, logradouro, bairro, localidade, uf) => {
+  const formattedCep = formatCep(cep);
+
   const query = 'INSERT INTO ceps (cep, logradouro, bairro, localidade, uf) VALUES (?, ?, ?, ?, ?)';
 
-  await connection.execute(query, [cep, logradouro, bairro, localidade, uf]);
+  await connection.execute(query, [formattedCep, logradouro, bairro, localidade, uf]);
 
-  return { cep, logradouro, localidade, uf };
-}
+  return { cep: formattedCep, logradouro, localidade, uf };
+};
 
 module.exports = {
   getAll,
+  findAddressByCep,
+  create,
 }
 
 /*
