@@ -1,0 +1,42 @@
+@url = http://localhost:3000/
+@id = 1
+
+### GET PLANTS
+GET {{url}}plants
+
+### GET PLANT BY ID
+GET {{url}}plant/{{id}}
+
+### DELETE PLANT BY ID
+DELETE {{url}}plant/{{id}}
+
+### EDIT PLANT BY ID
+PUT {{url}}plant/{{id}}
+Content-Type: application/json
+
+{
+  "plant": {
+    "breed": "",
+    "needsSun": "",
+    "origin": "",
+    "specialCare": "",
+    "size": ""
+  }
+}
+
+### POST NEW PLANT
+POST {{url}}plant
+Content-Type: application/json
+
+{
+  "plant": {
+    "breed": "",
+    "needsSun": "",
+    "origin": "",
+    "specialCare": "",
+    "size": ""
+  }
+}
+
+### GET PLANTS THAT NEEDS SUN BY ID
+GET {{url}}plant/{{id}}
